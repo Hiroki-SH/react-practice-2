@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 
 export const App = () => {
+  console.log("レンダリング");
+
   // Stateの定義
   const [num, setNum] = useState(0);
 
@@ -9,6 +12,10 @@ export const App = () => {
   const onClickButton = () => {
     setNum(num + 1);
   };
+
+  useEffect(() => {
+    alert();
+  }, [num]);
 
   return (
     <>
